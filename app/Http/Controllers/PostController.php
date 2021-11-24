@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreBlogPost;
 use App\Models\Post;
 
 class PostController extends Controller
@@ -12,13 +13,15 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request  )
+    public function index(StoreBlogPost $request  )
     {
-        return $request->path();
+        
         $posts= new Post;
+        dd($posts);
 
         $data = $posts->data();
         
+
        
         return view ('posts.index',compact('data'));
          
@@ -30,8 +33,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
+
     {
+        $request->flash();
         return view ('posts.create');
     }
 
@@ -42,11 +47,27 @@ class PostController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBlogPost $request)
     {
         
-        return $request->all();
-        return view ('posts.show',compact ('data'));
+        // return $request->file('photo')->store ('images','public');
+        // $filename = sprintf ('profile_%s.jpg',random_int(1,1000));
+        // if($request->hasfile('photo'))
+        // return $request->file('photo')->storeAs ('images','$filename', 'public');
+        // $data = [ 'imran','age'=>40];
+        // // return response ("<h2>hello,world</h2>",200)->withheaders([
+        // //     'content-type'=>'text/html',
+
+        // // ]);
+        // return $data;
+        // return view ('posts.show',compact ('data'));
+
+
+        dd($request->all());
+        
+
+        // $request->validated();
+        return back ()->with('message','your form  has been sucessfully submitted ');
 
     }
 
@@ -79,7 +100,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreBlogPost $request, $id)
     {
         //
     }
