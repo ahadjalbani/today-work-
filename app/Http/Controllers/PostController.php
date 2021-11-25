@@ -17,7 +17,7 @@ class PostController extends Controller
     {
         
         $posts= new Post;
-        dd($posts);
+        
 
         $data = $posts->data();
         
@@ -63,7 +63,7 @@ class PostController extends Controller
         // return view ('posts.show',compact ('data'));
 
 
-        dd($request->all());
+    
         
 
         // $request->validated();
@@ -79,7 +79,13 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $data= [
+            'name'=>'ahahd jalbani',
+            'age'=> 40
+
+        ];
+
+        return view ('posts.show',compact('data'));
     }
 
     /**

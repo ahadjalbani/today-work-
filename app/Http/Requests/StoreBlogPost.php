@@ -24,7 +24,9 @@ class StoreBlogPost extends FormRequest
     public function rules()
     {
         return [
-            // 'email'=>'bail|email|confirmed',
+            // 'email1'=>'bail|alpha_num',
+            // 'email2'=>'bail|gt:email|required',
+            
             // 'content'=>'required',
             // 'photo'=>'bail|between:2.4required',
             'check.*.id'=>'distinct',
