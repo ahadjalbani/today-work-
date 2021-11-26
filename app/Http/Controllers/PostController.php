@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreBlogPost;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Post;
 
 class PostController extends Controller
@@ -13,16 +15,26 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(StoreBlogPost $request  )
+    public function index()
+    
     {
+
+
         
-        $posts= new Post;
+        // $posts= new Post;
         
 
-        $data = $posts->data();
+        // $data = $posts->data();
         
 
-       
+        //
+       $profile =DB::insert("INSERT InTO profile (`name`,`phone`, `city`,`country`)VALUES(:name, :phone, :city, :country)",[
+           'name'=> 'irfan qasim',
+           'phone'=>'12324564557',
+           'city'=>'jhelum',
+           'country'=>'Pakistan'
+       ]);
+       dd($profile);
         return view ('posts.index',compact('data'));
          
 

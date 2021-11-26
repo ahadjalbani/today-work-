@@ -3,8 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+{{-- 
+        @php
+            
+        
+            
+            $data =false;
+        
+    @endphp
 
-        <title>Laravel</title>
+        @includefirst (['partials.message','partials.message'],['message'=>'laravel 6.0']) --}}
+
+       
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -51,15 +61,30 @@
                     </svg>
                 </div>
 
-                @php 
-                            $num= [1,2,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+                {{-- @php 
+                            $num1= [1,2,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+                            $num2 = [1,2,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+                            $count = 0;
                             @endphp 
-                            @foreach ($num as $n)
-                             <span> {{ $n }}</span>
+                            @foreach ($num1 as $n1)
+                            @foreach 
+                            @php 
+
+                            dd ($loop ->depth);
+                            @endphp
+                            @endforeach
+                            @endforeach
+                            @foreach ($num2 as $n2)
+                            <span style="color:blue">{{ $loop->remaining }}</span>
+                            @if ($loop->odd)
+                            @endif 
+                             <span style="color:red;" > {{ $n }}</span>
                             @if ($loop->iteration % 4==0)
                             <br>
                             @endif
                             @endforeach
+
+                            <p>{{ $count }}</p> --}}
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
