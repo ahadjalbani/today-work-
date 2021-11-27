@@ -20,7 +20,7 @@ use App\Http\Controllers\PostController;
 
 Route::view('/','welcome',['name'=>'Imran Qasim']);
 
-// Route::get('welcome', [WelcomeController::class, 'welcome']);
+Route::get('welcome', [WelcomeController::class, 'welcome']);
 
 // Route::get('goodbye/{name?}', [WelcomeController::class, 'goodbye']);
 

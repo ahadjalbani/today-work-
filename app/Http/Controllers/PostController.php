@@ -28,12 +28,11 @@ class PostController extends Controller
         
 
         //
-       $profile =DB::insert("INSERT InTO profile (`name`,`phone`, `city`,`country`)VALUES(:name, :phone, :city, :country)",[
-           'name'=> 'irfan qasim',
-           'phone'=>'12324564557',
-           'city'=>'jhelum',
-           'country'=>'Pakistan'
-       ]);
+    //    $profile =DB::update("UPDATE  profile set `phone`= '+9999999' where id = :id" , ['id'=>2]);
+        // $profile = DB::delete("DELETE from profile where id = :id",['id'=>2]);
+
+        // $profile = DB::statement('DROP TABLE users ');
+         
        dd($profile);
         return view ('posts.index',compact('data'));
          
