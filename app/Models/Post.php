@@ -3,26 +3,20 @@
 namespace App\Models;
 
  use Illuminate\Database\Eloquent\Model;
+ use Illuminate\Database\Eloquent\softDeletes;
 
 class Post extends Model {
 
-    public function data(){
+    use SoftDeletes;
+
+    protected $guard = ['user_id'];
 
 
-    return
-    [
-       [ 'name'=> 'ahad jalbani',
-        'company' => 'perfect web solutions'
-    ],
 
-    
-        
-    
-    ];
-
+   
     }
 
-}
+
 
     
 
